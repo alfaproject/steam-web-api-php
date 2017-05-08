@@ -1,10 +1,11 @@
 <?php
 namespace SteamApi;
 
+use Exception;
 use GuzzleHttp\Client as GuzzleClient;
-use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\ServerException;
+use Psr\Http\Message\ResponseInterface;
 use SteamApi\Exceptions\ApiArgumentRequiredException;
 use SteamApi\Exceptions\ApiCallFailedException;
 
@@ -41,7 +42,7 @@ class Client {
 
 		if ($this->method){
 			$url .= $this->method . '/';
-		} 
+		}
 
 		if ($version) {
 			return $url . 'v'. $this->version . '/';
@@ -112,7 +113,7 @@ class Client {
 		return $response->body;
 	}
 
-	public function prepareResponse($response)
+	public function prepareResponse(ResponseInterface $response)
 	{
 		try {
 			$result       = new \stdClass();

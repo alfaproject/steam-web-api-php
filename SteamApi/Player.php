@@ -1,7 +1,6 @@
 <?php
 namespace SteamApi;
 
-use SteamApi\Client;
 use SteamApi\Containers\Game;
 use SteamApi\Containers\Player\Level;
 use SteamApi\Interfaces\IPlayer;

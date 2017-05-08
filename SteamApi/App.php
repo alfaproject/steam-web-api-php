@@ -2,7 +2,6 @@
 
 namespace SteamApi;
 
-use SteamApi\Client;
 use SteamApi\Containers\App as AppContainer;
 use SteamApi\Interfaces\IApp;
 

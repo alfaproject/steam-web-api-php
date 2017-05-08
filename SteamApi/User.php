@@ -2,7 +2,6 @@
 namespace SteamApi;
 
 use SteamApi\Interfaces\IUser;
-use SteamApi\Client;
 
 class User extends Client implements IUser {
 	protected $interface = 'ISteamUser';
@@ -38,10 +37,10 @@ class User extends Client implements IUser {
 		$client = $this->setUpClient($arguments);
 
 		$bans = $this->convertToObjects($client->players, '\SteamApi\Containers\Player\Bans');
-		
+
 		return count($bans) === 1 ? $bans[0] : $bans;
 	}
-	
+
 	public function GetPlayerSummaries($steamId = null)
 	{
 		// Set up the api details

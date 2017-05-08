@@ -1,7 +1,6 @@
 <?php
 namespace SteamApi;
 
-use SteamApi\Client;
 use SteamApi\Interfaces\INews;
 
 class News extends Client implements INews {
